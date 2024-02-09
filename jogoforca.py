@@ -7,9 +7,11 @@ cont= 0
 erros = 0
 total = 0
 repetida = 0
+print(f"A palavra contem {len(certo)} letras : \n")
+print(certo)
 #Inicio do loop ate que palavra esteja completa
 while cont < len(certo):
-    palpite = input("Digite uma letra : ")
+    palpite = input("\nDigite uma letra : ")
     # percorendo a palavra conforme tamanho desta
     for i in range(len(palavra)): 
         #se letra digitada tem na palvra mas nao esta na lista adiciona ela   
@@ -18,14 +20,14 @@ while cont < len(certo):
               del certo[i]
               certo.insert(i,palavra[i])   
               cont= cont + 1 
-              status = "correto "
+              status = "\ncorreto\n"
             #caso letra ja esteja na lista so atualiza e muda status
             else:
-               status = ("letra repetida") 
+               status = "\nletra repetida\n" 
                repetida = repetida + 1 
                break  
         elif palpite not in palavra: 
-             status = "erro"
+             status = "\nerro\n"
              erros = (erros + 1)  
     print(status)  
     print(str(certo).replace("," , " "))  
